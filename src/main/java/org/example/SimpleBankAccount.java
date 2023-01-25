@@ -2,25 +2,25 @@ package org.example;
 import java.util.Scanner;
 
 class BankAcc{
-    String AccholderName;
-    long AccNumber,Balance;
+    String accholderName;
+    long accNumber,balance;
     BankAcc(String a,long b,long c){
-        AccholderName=a;AccNumber=b;Balance=c;
+        accholderName=a;accNumber=b;balance=c;
     }
     public void deposite(long namount){
-        Balance+=namount;
+        balance+=namount;
         System.out.println("Dear User! amount deposited is----- "+ namount);
 
     }
     public void withdraw(long mamount){
-        Balance-=mamount;
+        balance-=mamount;
         System.out.println("Dear User! amount withdrawn is-----"+ mamount);
     }
     public String Name(){
-        return AccholderName;
+        return accholderName;
     }
     public long balance(){
-        return Balance;
+        return balance;
     }
 }
 public class SimpleBankAccount {

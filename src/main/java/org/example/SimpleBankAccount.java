@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 class BankAcc{
     String accholderName;
-    long accNumber,balance;
+    long accNumber;
+    long balance;
     BankAcc(String a,long b,long c){
         accholderName=a;accNumber=b;balance=c;
     }
@@ -16,7 +17,7 @@ class BankAcc{
         balance-=mamount;
         System.out.println("Dear User! amount withdrawn is-----"+ mamount);
     }
-    public String Name(){
+    public String ame(){
         return accholderName;
     }
     public long balance(){
@@ -49,7 +50,7 @@ public class SimpleBankAccount {
             }
             else if(op==3){
                 long b1= bob.balance();
-                String na=bob.Name();
+                String na=bob.ame();
                 System.out.println("The AccountHolder Name is-----"+na);
                 System.out.println("The Current Available Balance is-----"+b1);
             }

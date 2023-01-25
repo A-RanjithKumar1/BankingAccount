@@ -10,12 +10,12 @@ class BankAcc{
     }
     public void deposite(long namount){
         balance+=namount;
-        System.out.println("Dear User! amount deposited is----- "+ namount);
+        //System.out.println("Dear User! amount deposited is----- "+ namount);
 
     }
     public void withdraw(long mamount){
         balance-=mamount;
-        System.out.println("Dear User! amount withdrawn is-----"+ mamount);
+        //System.out.println("Dear User! amount withdrawn is-----"+ mamount);
     }
     public String ame(){
         return accholderName;

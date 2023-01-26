@@ -56,7 +56,7 @@ public class SimpleBankAccount {
                 String na=bob.ame();
                 lOGGER.log(Level.INFO,"The AccountHolder Name is-----".concat(na));
                 lOGGER.log(Level.INFO,"The Current Available Balance is");
-                lOGGER.log(Level.INFO,Double.toString(b1));
+                lOGGER.log(Level.INFO,Double.toString(b1),"is Available");
             }
         }
     }

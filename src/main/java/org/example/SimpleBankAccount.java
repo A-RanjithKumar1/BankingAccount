@@ -4,9 +4,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 class BankAcc{
     private static final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    String accholderName;
-    long accNumber;
-    long balance;
+    private final String accholderName;
+    private long accNumber;
+    private long balance;
     BankAcc(String a,long b,long c){
         accholderName=a;accNumber=b;balance=c;
     }
@@ -53,8 +53,8 @@ public class SimpleBankAccount {
             }
             else if(op==3){
                 long b1= bob.balance();
-                lOGGER.log(Level.INFO,"The AccountHolder Name is-----".concat(bob.ame()));
-                lOGGER.log(Level.INFO,Double.toString(b1),"The Current Available Balance is-----"+b1);
+                lOGGER.log(Level.INFO,(String.format("The AccountHolder Name is-----%s",(bob.ame()))));
+                lOGGER.log(Level.INFO,(String.format("The Current Available Balance is-----%d",b1)));
             }
         }
     }

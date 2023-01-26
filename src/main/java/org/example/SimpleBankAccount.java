@@ -28,34 +28,34 @@ class BankAcc{
 }
 public class SimpleBankAccount {
     public static void main(String[] args) {
-        final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+        final Logger lOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
         Scanner sc=new Scanner(System.in);
-        LOGGER.log(Level.INFO,"Enter the userName");
+        lOGGER.log(Level.INFO,"Enter the userName");
         String name=sc.next();
-        LOGGER.log(Level.INFO,"Enter the AccountNumber");
+        lOGGER.log(Level.INFO,"Enter the AccountNumber");
         long num=sc.nextLong();
-        System.out.println("Enter the Initial Amount to be deposited");
+        lOGGER.log(Level.INFO,"Enter the Initial Amount to be deposited");
         long bal=sc.nextLong();
         BankAcc bob=new BankAcc(name, num, bal);
         int op=0;
         while(op!=4){
-            LOGGER.log(Level.INFO,"Dear User! Please Go through the below option and Enter the option"+"\n"+"1.Deposite 2.Withdraw 3.Balance 4.Exit");
+            lOGGER.log(Level.INFO,"Dear User! Please Go through the below option and Enter the option"+"\n"+"1.Deposite 2.Withdraw 3.Balance 4.Exit");
             op=sc.nextInt();
             if(op==1){
-                LOGGER.log(Level.INFO,"Enter the Deposite");
+                lOGGER.log(Level.INFO,"Enter the Deposite");
                 long dep=sc.nextLong();
                 bob.deposite(dep);
             }
             else if(op==2){
-                LOGGER.log(Level.INFO,"Enter the Amount  to be withdrawn");
+                lOGGER.log(Level.INFO,"Enter the Amount  to be withdrawn");
                 long dra=sc.nextLong();
                 bob.withdraw(dra);
             }
             else if(op==3){
                 long b1= bob.balance();
                 String na=bob.ame();
-                LOGGER.log(Level.INFO,"The AccountHolder Name is-----"+na);
-                LOGGER.log(Level.INFO,Double.toString(b1),"The Current Available Balance is-----"+b1);
+                lOGGER.log(Level.INFO,"The AccountHolder Name is-----".concat(na));
+                lOGGER.log(Level.INFO,Double.toString(b1),"The Current Available Balance is-----"+b1);
             }
         }
     }

@@ -53,8 +53,9 @@ public class SimpleBankAccount {
             }
             else if(op==3){
                 long b1= bob.balance();
-                lOGGER.log(Level.INFO,(String.format("The AccountHolder Name is-----%s",(bob.ame()))));
-                lOGGER.log(Level.INFO,Double.toString(b1),String.format("The Current Available Balance is-----%d",b1));
+                String na=bob.ame();
+                lOGGER.log(Level.INFO,"\nThe AccountHolder Name is-----"+na);
+                lOGGER.log(Level.INFO,"\nThe Current Available Balance is-----"+b1+" ",Long.toString(b1));
             }
         }
     }

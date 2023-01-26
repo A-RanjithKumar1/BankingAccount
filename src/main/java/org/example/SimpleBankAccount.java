@@ -12,12 +12,12 @@ class BankAcc{
     }
     public void deposite(long namount){
         balance+=namount;
-        LOGGER.log(Level.INFO,"Dear User! amount deposited is----- "+ namount);
+        LOGGER.log(Level.INFO,Double.toString(namount),"Dear User! amount deposited is----- "+ namount);
 
     }
     public void withdraw(long mamount){
         balance-=mamount;
-        LOGGER.log(Level.INFO,"Dear User! amount withdrawn is-----"+ mamount);
+        LOGGER.log(Level.INFO,Double.toString(mamount),"Dear User! amount withdrawn is-----"+ mamount);
     }
     public String ame(){
         return accholderName;
@@ -28,7 +28,7 @@ class BankAcc{
 }
 public class SimpleBankAccount {
     public static void main(String[] args) {
-         final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+        final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
         Scanner sc=new Scanner(System.in);
         LOGGER.log(Level.INFO,"Enter the userName");
         String name=sc.next();
@@ -55,7 +55,7 @@ public class SimpleBankAccount {
                 long b1= bob.balance();
                 String na=bob.ame();
                 LOGGER.log(Level.INFO,"The AccountHolder Name is-----"+na);
-                LOGGER.log(Level.INFO,"The Current Available Balance is-----"+b1);
+                LOGGER.log(Level.INFO,Double.toString(b1),"The Current Available Balance is-----"+b1);
             }
         }
     }

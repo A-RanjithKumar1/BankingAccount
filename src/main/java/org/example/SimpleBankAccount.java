@@ -28,13 +28,13 @@ class BankAcc{
 }
 public class SimpleBankAccount {
     public static void main(String[] args) {
-        private static final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+         final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
         Scanner sc=new Scanner(System.in);
         LOGGER.log(Level.INFO,"Enter the userName");
         String name=sc.next();
         LOGGER.log(Level.INFO,"Enter the AccountNumber");
         long num=sc.nextLong();
-        System.out.println("Enter the BalanceAmount");
+        System.out.println("Enter the Initial Amount to be deposited");
         long bal=sc.nextLong();
         BankAcc bob=new BankAcc(name, num, bal);
         int op=0;

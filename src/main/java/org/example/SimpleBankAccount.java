@@ -1,9 +1,9 @@
 package org.example;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 class BankAcc{
-    private static final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    String s;
+    private static final Logger LOGGER = Logger.getLogger("InfoLogging");
     private final String accholderName;
     private long accNumber;
     private long balance;
@@ -12,12 +12,13 @@ class BankAcc{
     }
     public void deposite(long namount){
         balance+=namount;
-        LOGGER.log(Level.INFO,Double.toString(namount),"Dear User! amount deposited is----- "+ namount);
-
+        s="Dear User! amount deposited is----- "+ namount;
+        LOGGER.info(s);
     }
     public void withdraw(long mamount){
         balance-=mamount;
-        LOGGER.log(Level.INFO,Double.toString(mamount),"Dear User! amount withdrawn is-----"+ mamount);
+        s="Dear User! amount withdrawn is-----"+ mamount;
+        LOGGER.info(s);
     }
     public String ame(){
         return accholderName;
@@ -27,38 +28,42 @@ class BankAcc{
     }
 }
 public class SimpleBankAccount {
+    private static final Logger LOG = Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
-        final Logger lOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-        Scanner sc=new Scanner(System.in);
-        lOGGER.log(Level.INFO,"Enter the userName");
-        String name=sc.next();
-        lOGGER.log(Level.INFO,"Enter the AccountNumber");
-        long num=sc.nextLong();
-        lOGGER.log(Level.INFO,"Enter the Initial Amount to be deposited");
-        long bal=sc.nextLong();
-        BankAcc bob=new BankAcc(name, num, bal);
-        int op=0;
-        while(op!=4){
-            lOGGER.log(Level.INFO,"Dear User! Please Go through the below option and Enter the option"+"\n"+"1.Deposite 2.Withdraw 3.Balance 4.Exit");
-            op=sc.nextInt();
-            if(op==1){
-                lOGGER.log(Level.INFO,"Enter the Deposite");
-                long dep=sc.nextLong();
-                bob.deposite(dep);
+        try {
+            final Logger lOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+            Scanner sc = new Scanner(System.in);
+            String s;
+            LOG.info("Enter the userName");
+            String name = sc.next();
+            LOG.info( "Enter the AccountNumber");
+            long num = sc.nextLong();
+            LOG.info( "Enter the Initial Amount to be deposited");
+            long bal = sc.nextLong();
+            BankAcc bob = new BankAcc(name, num, bal);
+            int op = 0;
+            while (op != 4) {
+                LOG.info( "Dear User! Please Go through the below option and Enter the option" + "\n" + "1.Deposite 2.Withdraw 3.Balance 4.Exit");
+                op = sc.nextInt();
+                if (op == 1) {
+                    LOG.info( "Enter the Deposite");
+                    long dep = sc.nextLong();
+                    bob.deposite(dep);
+                } else if (op == 2) {
+                    LOG.info("Enter the Amount  to be withdrawn");
+                    long dra = sc.nextLong();
+                    bob.withdraw(dra);
+                } else if (op == 3) {
+                    long b1 = bob.balance();
+                    String na = bob.ame();
+                    s="The Account holder Name is---"+na;
+                    LOG.info(s);
+                    s="The Current Available Balance is"+b1;
+                    LOG.info(s);
+                }
             }
-            else if(op==2){
-                lOGGER.log(Level.INFO,"Enter the Amount  to be withdrawn");
-                long dra=sc.nextLong();
-                bob.withdraw(dra);
-            }
-            else if(op==3){
-                long b1= bob.balance();
-                String na=bob.ame();
-                lOGGER.log(Level.INFO,"The Account holder Name is---");
-                lOGGER.log(Level.INFO,na);
-                lOGGER.log(Level.INFO,"The Current Available Balance is");
-                lOGGER.log(Level.INFO,Double.toString(b1),"is Available");
-            }
+        } catch (Exception e) {
+            LOG.info("Something went wrong while giving input");
         }
     }
 }

@@ -31,7 +31,6 @@ public class SimpleBankAccount {
     private static final Logger LOG = Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
         try {
-            final Logger lOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
             Scanner sc = new Scanner(System.in);
             String s;
             LOG.info("Enter the userName");

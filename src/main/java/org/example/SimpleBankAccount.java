@@ -56,7 +56,7 @@ public class SimpleBankAccount {
                     String na = bob.ame();
                     s="The Account holder Name is---"+na;
                     LOG.info(s);
-                    s="The Current Available Balance is"+b1;
+                    s="The Current Available Balance is "+b1;
                     LOG.info(s);
                 }
             }

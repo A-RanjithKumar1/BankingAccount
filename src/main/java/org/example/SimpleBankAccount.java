@@ -30,7 +30,6 @@ class BankAcc{
 public class SimpleBankAccount {
     private static final Logger LOG = Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
-        try {
             Scanner sc = new Scanner(System.in);
             String s;
             LOG.info("Enter the userName");
@@ -61,8 +60,6 @@ public class SimpleBankAccount {
                     LOG.info(s);
                 }
             }
-        } catch (Exception e) {
-            LOG.info("Something went wrong while giving input");
-        }
+
     }
 }
